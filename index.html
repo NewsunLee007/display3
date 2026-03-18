@@ -43,6 +43,25 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        /* 折叠动画样式 */
+        .accordion-content {
+            display: grid;
+            grid-template-rows: 0fr;
+            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .accordion-content > div {
+            overflow: hidden;
+        }
+        .accordion-content.is-open {
+            grid-template-rows: 1fr;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .is-open .accordion-icon {
+            transform: rotate(180deg);
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800 antialiased leading-relaxed selection:bg-brand-primary selection:text-white">
@@ -103,10 +122,9 @@
             </div>
         </section>
 
-        <!-- Section 1: 通知详情 (Logistics) - 已修复重复标题的 Bug -->
-        <!-- 采用全新重叠卡片UI设计 (深度还原您提供的截图风格) -->
+        <!-- Section 1: 通知详情 (Logistics) -->
         <section class="relative mt-8 sm:mt-12">
-            <!-- 底部浅色阴影层 (模仿截图中的底卡) -->
+            <!-- 底部浅色阴影层 -->
             <div class="hidden sm:block absolute inset-0 bg-[#f4f6f9] rounded-3xl border border-gray-200 translate-y-4 -translate-x-4"></div>
             
             <!-- 顶部主卡片 -->
@@ -130,7 +148,7 @@
                     <div class="space-y-6 sm:space-y-8">
                         <div>
                             <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                                <i class="far fa-clock text-[#d97706] text-lg"></i> 上课时间
+                                <i class="far fa-clock text-[#d97706] text-lg"></i> 上课日程
                             </h4>
                             <ul class="space-y-4 pl-7 list-disc marker:text-[#cbd5e1] text-[15px]">
                                 <li class="leading-relaxed">
@@ -180,52 +198,7 @@
             </div>
         </section>
 
-        <!-- Section 2: 课程说明 (Program Description) -->
-        <section class="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-100">
-            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-100 pb-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div>
-                    <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划说明</h2>
-                    <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">Program Description</p>
-                </div>
-            </div>
-
-            <div class="space-y-6 sm:space-y-8 text-left sm:text-justify">
-                <!-- Para 1 -->
-                <div class="group">
-                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
-                        This program is specifically designed as a critical academic English bridge course for students transitioning into the A-Level curriculum. The course adopts a dual-track approach, integrating "Comprehensive Application" with "Oral Application" to holistically enhance students' English proficiency for the challenges of an international curriculum.
-                    </p>
-                    <p class="text-gray-800 text-base leading-loose">
-                        本课程专为即将进入国际高中 A-Level 课程体系的学生设计，是一门关键的学术英语衔接课程。课程以<strong class="text-brand-primary">双线并进</strong>的方式展开，将“综合应用”与“口语应用”相结合，旨在全面提升学生的英语能力以适应国际课程的挑战。
-                    </p>
-                </div>
-                
-                <!-- Para 2 -->
-                <div class="group border-t border-dashed border-gray-200 pt-6">
-                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
-                        The "Comprehensive Application" track focuses on core academic skills such as academic reading and writing, grammatical structures, listening and note-taking, and foundational research methods, building a solid linguistic base for A-Level subject studies. In parallel, the "Oral Application" track develops students' spoken communication skills, covering key interactive competencies like group discussions, debates, individual presentations, and providing constructive feedback.
-                    </p>
-                    <p class="text-gray-800 text-base leading-loose">
-                        <strong class="text-brand-secondary">“综合应用”</strong>部分聚焦于学术读写、语法结构、听力笔记和研究方法等核心学术英语技能，为 A-Level 的学科学习构建坚实的语言底座。与此同时，<strong class="text-brand-accent">“口语应用”</strong>部分同步培养学生的口语沟通能力，涵盖小组讨论、辩论、个人陈述及建设性反馈等关键互动技巧。
-                    </p>
-                </div>
-
-                <!-- Para 3 -->
-                <div class="group border-t border-dashed border-gray-200 pt-6">
-                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
-                        This 14-week course aims to help students achieve a seamless transition to their international high school studies, laying a robust linguistic and academic foundation for success in the A-Level program. Upon completion, students will be equipped to confidently express their ideas in academic discussions, efficiently manage reading and writing assignments, and master the essential learning strategies required for an international academic environment.
-                    </p>
-                    <p class="text-gray-800 text-base leading-loose">
-                        本课程为期 <strong class="text-brand-dark">14 周</strong>，最终目标是帮助学生<strong class="text-brand-primary border-b-2 border-brand-accent/50 pb-0.5">无缝衔接国际高中学习</strong>，为他们在 A-Level 课程中取得成功打下坚实的语言与学术基础。课程结束后，学生将能够在学术讨论中自信地表达观点，高效地完成读写任务，并掌握进入国际课程所必需的学习策略。
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 3: 教师团队 (Faculty) -->
+        <!-- Section 2: 导师团队 (Faculty) - 移至此处保持展开展示 -->
         <section class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl shadow-xl p-6 sm:p-10 text-white">
             <div class="text-center mb-8 sm:mb-10">
                 <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">导师团队</h2>
@@ -237,7 +210,6 @@
                 <!-- Teacher 1 -->
                 <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col sm:flex-row gap-5 sm:gap-6 items-center sm:items-start hover:bg-white/15 transition-all">
                     <div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-2xl overflow-hidden bg-white/20 border-2 border-brand-accent/50">
-                        <!-- 预留照片位置 -->
                         <img src="https://placehold.co/400x400/1e3a8a/ffffff?text=Froggen" alt="苏乐老师" class="w-full h-full object-cover">
                     </div>
                     <div class="w-full">
@@ -256,7 +228,6 @@
                 <!-- Teacher 2 -->
                 <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col sm:flex-row gap-5 sm:gap-6 items-center sm:items-start hover:bg-white/15 transition-all">
                     <div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-2xl overflow-hidden bg-white/20 border-2 border-brand-accent/50">
-                        <!-- 预留照片位置 -->
                         <img src="https://placehold.co/400x400/1e3a8a/ffffff?text=Kenneth" alt="Kenneth老师" class="w-full h-full object-cover">
                     </div>
                     <div class="w-full">
@@ -274,231 +245,295 @@
             </div>
         </section>
 
-        <!-- Section 4: 14周课程大纲 (Weekly Breakdown) -->
-        <section class="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-100">
-            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-100 pb-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
-                    <i class="fas fa-tasks"></i>
+        <!-- Section 3: 课程说明 (Program Description - 折叠面板) -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" id="section-description">
+            <button class="w-full flex items-center justify-between p-5 sm:p-8 bg-white hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleAccordion('desc-content', this)">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划说明</h2>
+                        <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mt-1">Program Description</p>
+                    </div>
                 </div>
-                <div>
-                    <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划详见附件</h2>
-                    <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">14-Week Syllabus Overview</p>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 accordion-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </button>
+            
+            <div id="desc-content" class="accordion-content border-t border-gray-100">
+                <div> <!-- 隐藏容器的内部包装层 -->
+                    <div class="p-5 sm:p-8 pt-6 space-y-6 sm:space-y-8 text-left sm:text-justify bg-white">
+                        <!-- Para 1 -->
+                        <div class="group">
+                            <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                                This program is specifically designed as a critical academic English bridge course for students transitioning into the A-Level curriculum. The course adopts a dual-track approach, integrating "Comprehensive Application" with "Oral Application" to holistically enhance students' English proficiency for the challenges of an international curriculum.
+                            </p>
+                            <p class="text-gray-800 text-base leading-loose">
+                                本课程专为即将进入国际高中 A-Level 课程体系的学生设计，是一门关键的学术英语衔接课程。课程以<strong class="text-brand-primary">双线并进</strong>的方式展开，将“综合应用”与“口语应用”相结合，旨在全面提升学生的英语能力以适应国际课程的挑战。
+                            </p>
+                        </div>
+                        
+                        <!-- Para 2 -->
+                        <div class="group border-t border-dashed border-gray-200 pt-6">
+                            <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                                The "Comprehensive Application" track focuses on core academic skills such as academic reading and writing, grammatical structures, listening and note-taking, and foundational research methods, building a solid linguistic base for A-Level subject studies. In parallel, the "Oral Application" track develops students' spoken communication skills, covering key interactive competencies like group discussions, debates, individual presentations, and providing constructive feedback.
+                            </p>
+                            <p class="text-gray-800 text-base leading-loose">
+                                <strong class="text-brand-secondary">“综合应用”</strong>部分聚焦于学术读写、语法结构、听力笔记和研究方法等核心学术英语技能，为 A-Level 的学科学习构建坚实的语言底座。与此同时，<strong class="text-brand-accent">“口语应用”</strong>部分同步培养学生的口语沟通能力，涵盖小组讨论、辩论、个人陈述及建设性反馈等关键互动技巧。
+                            </p>
+                        </div>
+
+                        <!-- Para 3 -->
+                        <div class="group border-t border-dashed border-gray-200 pt-6">
+                            <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                                This 14-week course aims to help students achieve a seamless transition to their international high school studies, laying a robust linguistic and academic foundation for success in the A-Level program. Upon completion, students will be equipped to confidently express their ideas in academic discussions, efficiently manage reading and writing assignments, and master the essential learning strategies required for an international academic environment.
+                            </p>
+                            <p class="text-gray-800 text-base leading-loose">
+                                本课程为期 <strong class="text-brand-dark">14 周</strong>，最终目标是帮助学生<strong class="text-brand-primary border-b-2 border-brand-accent/50 pb-0.5">无缝衔接国际高中学习</strong>，为他们在 A-Level 课程中取得成功打下坚实的语言与学术基础。课程结束后，学生将能够在学术讨论中自信地表达观点，高效地完成读写任务，并掌握进入国际课程所必需的学习策略。
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Grid for 14 Weeks -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-                <!-- 紧凑型卡片结构 -->
-                <!-- Week 1 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 1</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">入班诊断与国际课堂适应 (Diagnostic Assessment & Adapting to the International Classroom).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">口语沟通能力诊断、观点的组织与清晰度.</p>
+        <!-- Section 4: 14周课程大纲 (Weekly Breakdown - 折叠面板) -->
+        <section class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden" id="section-syllabus">
+            <button class="w-full flex items-center justify-between p-5 sm:p-8 bg-white hover:bg-slate-50 transition-colors focus:outline-none" onclick="toggleAccordion('syllabus-content', this)">
+                <div class="flex items-center gap-3 sm:gap-4">
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="text-left">
+                        <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划</h2>
+                        <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider mt-1">14-Week Syllabus</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 accordion-icon">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </button>
+
+            <div id="syllabus-content" class="accordion-content border-t border-gray-100">
+                <div> <!-- 隐藏容器的内部包装层 -->
+                    <div class="p-5 sm:p-8 pt-6 bg-slate-50/50">
+                        <!-- Grid for 14 Weeks -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                            <!-- Week 1 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 1</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">入班诊断与国际课堂适应 (Diagnostic Assessment & Adapting to the International Classroom).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">口语沟通能力诊断、观点的组织与清晰度.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 2 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 2</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">句子结构与时态框架 (A-Level阅读底座).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">50个话题选择、积极倾听与释义转述 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 3 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 3</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">名词短语扩展：让句子变“学术” (Noun Phrase Expansion).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">提问技巧与轮流发言 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 4 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 4</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">复合句1 - 从句与连接词 (Complex Sentences 1: Clauses & Conjunctions).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">使用 P.E.E. 模型进行辩论练习的话题选择.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 5 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 5</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">复合句2 - 定语从句与信息整合.</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">关于倾听与发言均衡度的同伴观察.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 6 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 6</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">动词系统：情态动词与学术表达 (Hedging).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">发言的简洁性与相关性 (独立回答).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 7 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 7</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">段落写作1：清晰、连贯、可读 (Paragraph Writing 1).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">说服性与解释性发言 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 8 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 8</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">期中复盘与小测 + 学习方法 (笔记与错题).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">视觉与修辞辅助 (独立回答).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 9 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 9</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">听力与课堂听讲：抓关键、会提问 (Listening & Note-taking).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">接收反馈与反思 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 10 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 10</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">讨论与展示：A-Level课堂互动能力.</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">叙事与讲故事基础 (独立).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 11 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 11</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">写作2：短文结构 (引言—主体—结尾).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">在时间压力下回答问题 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 12 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 12</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">阅读技能升级：推断、态度与主旨 (为大量阅读做准备).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">带有论据的独立论证 (独立).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 13 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 13</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">研究与引用意识 (Academic Honesty 入门).</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">小组协作与讨论中的领导力 (小组).</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Week 14 -->
+                            <div class="bg-white border border-slate-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+                                <h3 class="font-display font-bold text-brand-primary border-b border-slate-100 pb-2 mb-3">Week 14</h3>
+                                <div class="space-y-3 text-sm">
+                                    <div>
+                                        <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                                        <p class="text-gray-700">期末项目工作坊：演讲结构与 PPT 英语.</p>
+                                    </div>
+                                    <div>
+                                        <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                                        <p class="text-gray-700">综合运用与展示准备 (小组与个人).</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-
-                <!-- Week 2 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 2</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">句子结构与时态框架 (A-Level阅读底座).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">50个话题选择、积极倾听与释义转述 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 3 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 3</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">名词短语扩展：让句子变“学术” (Noun Phrase Expansion).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">提问技巧与轮流发言 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 4 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 4</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">复合句1 - 从句与连接词 (Complex Sentences 1: Clauses & Conjunctions).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">使用 P.E.E. 模型进行辩论练习的话题选择.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 5 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 5</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">复合句2 - 定语从句与信息整合.</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">关于倾听与发言均衡度的同伴观察.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 6 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 6</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">动词系统：情态动词与学术表达 (Hedging).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">发言的简洁性与相关性 (独立回答).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 7 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 7</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">段落写作1：清晰、连贯、可读 (Paragraph Writing 1).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">说服性与解释性发言 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 8 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 8</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">期中复盘与小测 + 学习方法 (笔记与错题).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">视觉与修辞辅助 (独立回答).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 9 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 9</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">听力与课堂听讲：抓关键、会提问 (Listening & Note-taking).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">接收反馈与反思 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 10 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 10</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">讨论与展示：A-Level课堂互动能力.</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">叙事与讲故事基础 (独立).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 11 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 11</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">写作2：短文结构 (引言—主体—结尾).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">在时间压力下回答问题 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 12 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 12</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">阅读技能升级：推断、态度与主旨 (为大量阅读做准备).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">带有论据的独立论证 (独立).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 13 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 13</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">研究与引用意识 (Academic Honesty 入门).</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">小组协作与讨论中的领导力 (小组).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Week 14 -->
-                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
-                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 14</h3>
-                    <div class="space-y-3 text-sm">
-                        <div>
-                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
-                            <p class="text-gray-700">期末项目工作坊：演讲结构与 PPT 英语.</p>
-                        </div>
-                        <div>
-                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
-                            <p class="text-gray-700">综合运用与展示准备 (小组与个人).</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -529,7 +564,7 @@
                     </div>
                 </div>
                 
-                <!-- 替换后的专属二维码 -->
+                <!-- 专属二维码 -->
                 <div class="bg-white p-3 rounded-xl shadow-lg shrink-0 w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center mx-auto sm:mx-0 relative group">
                     <img src="https://p.ipic.vip/kap9v1.jpg" alt="微信二维码" class="w-full h-full object-contain mb-1 rounded">
                     <div class="absolute -bottom-6 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">扫码添加微信</div>
@@ -549,5 +584,22 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Accordion Interactivity -->
+    <script>
+        function toggleAccordion(contentId, button) {
+            const content = document.getElementById(contentId);
+            
+            // 切换该面板的开/关状态
+            content.classList.toggle('is-open');
+            button.classList.toggle('is-open');
+            
+            // 动态修改背景颜色反馈
+            if(button.classList.contains('is-open')) {
+                button.classList.add('bg-slate-50');
+            } else {
+                button.classList.remove('bg-slate-50');
+            }
+        }
+    </script>
 </body>
 </html>
