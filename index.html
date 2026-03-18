@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-A Level English Bridge - 上海新纪元双语学校</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['"Noto Serif SC"', 'serif'],
+                        display: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#1e3a8a', // 国际蓝
+                            secondary: '#3b82f6',
+                            accent: '#d97706',  // 香槟金
+                            light: '#f8fafc'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased leading-relaxed selection:bg-brand-primary selection:text-white">
+
+    <!-- Hero Header -->
+    <header class="relative bg-brand-primary text-white pt-12 pb-24 sm:pt-20 sm:pb-32 px-4 sm:px-6 text-center overflow-hidden shadow-2xl">
+        <div class="absolute inset-0 bg-pattern"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/80 to-brand-dark/95"></div>
+        
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <!-- 插入的 Logo (优化融合度：采用发光盾徽/圆形容器) -->
+            <div class="relative mb-8 group">
+                <div class="absolute inset-0 bg-brand-accent blur-xl opacity-20 group-hover:opacity-40 transition-opacity rounded-full"></div>
+                <div class="relative bg-white p-4 rounded-full shadow-2xl border-4 border-white/10 flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28">
+                    <img src="https://p.ipic.vip/6tdy8x.jpg" alt="上海新纪元双语学校 Logo" class="w-full h-full object-contain mix-blend-multiply">
+                </div>
+            </div>
+
+            <p class="text-xs sm:text-sm md:text-base text-brand-accent font-semibold tracking-widest uppercase mb-4 leading-relaxed">
+                Shanghai New Epoch Bilingual School International Department Ruian Branch
+            </p>
+            <h1 class="text-3xl sm:text-5xl md:text-6xl font-display font-bold mb-4 sm:mb-6 tracking-wide leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-blue-100 to-white">
+                Pre-A Level <br class="md:hidden">English Bridge
+            </h1>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-serif tracking-widest text-white/90 mb-6 sm:mb-8">
+                初高英语衔接课程
+            </h2>
+            
+            <!-- Quick Info Cards in Header -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mt-2 sm:mt-4">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base flex items-center gap-2">
+                    <i class="far fa-calendar-check text-brand-accent"></i> <span>为期 14 周</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base flex items-center gap-2">
+                    <i class="fas fa-chalkboard-teacher text-brand-accent"></i> <span>中外教双轨制</span>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 sm:px-6 sm:py-2 text-sm sm:text-base flex items-center gap-2">
+                    <i class="fas fa-gift text-brand-accent"></i> <span>官方免费专训</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="relative z-20 max-w-5xl mx-auto px-3 sm:px-6 lg:px-8 -mt-10 sm:-mt-16 pb-16 sm:pb-20 space-y-6 sm:space-y-12">
+        
+        <!-- 新增模块：致家长的一封信 (引言) -->
+        <section class="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-100 relative overflow-hidden">
+            <!-- 装饰性左侧边框 -->
+            <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-brand-primary"></div>
+            <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark mb-4 pl-2">
+                各位家长好！
+            </h2>
+            <div class="text-gray-700 leading-loose text-sm sm:text-base pl-2 sm:pl-8 text-justify">
+                <p>
+                    为了强化提升学生现有英语能力水平，做好初高英语课程衔接，为学生入读国际高中（A-level课程）及华侨联考备考提前做好准备，经研究决定，将于 <strong class="text-brand-primary border-b-2 border-brand-accent/50 pb-0.5">2026年3月19日</strong> 开始进行英语学科初高衔接课程专训（免费）。具体通知如下：
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 1: 通知详情 (Logistics) - 已修复重复标题的 Bug -->
+        <!-- 采用全新重叠卡片UI设计 (深度还原您提供的截图风格) -->
+        <section class="relative mt-8 sm:mt-12">
+            <!-- 底部浅色阴影层 (模仿截图中的底卡) -->
+            <div class="hidden sm:block absolute inset-0 bg-[#f4f6f9] rounded-3xl border border-gray-200 translate-y-4 -translate-x-4"></div>
+            
+            <!-- 顶部主卡片 -->
+            <div class="relative bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 p-6 sm:p-10">
+                
+                <!-- 头部标题区 -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-2xl bg-[#eef2ff] text-[#1e3a8a] flex items-center justify-center text-xl shrink-0 font-bold">
+                        i
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-serif font-bold text-[#0f172a] tracking-wide">开课通知</h2>
+                        <p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Course Logistics</p>
+                    </div>
+                </div>
+                
+                <!-- 极细虚线分隔 -->
+                <div class="border-b border-gray-100 mb-8"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 text-gray-700">
+                    <div class="space-y-6 sm:space-y-8">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                                <i class="far fa-clock text-[#d97706] text-lg"></i> 上课时间
+                            </h4>
+                            <ul class="space-y-4 pl-7 list-disc marker:text-[#cbd5e1] text-[15px]">
+                                <li class="leading-relaxed">
+                                    <strong>每周二、周四</strong> 下午第四节 (16:30-17:10) 
+                                    <span class="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-500 ml-1 whitespace-nowrap">口语/外教</span>
+                                </li>
+                                <li class="leading-relaxed">
+                                    <strong>每周日</strong> 上午两节大课 (8:30-11:30) 
+                                    <span class="text-xs bg-gray-100 px-2 py-0.5 rounded text-gray-500 ml-1 whitespace-nowrap">综合/中教</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt text-[#d97706] text-lg pl-0.5"></i> 上课地点
+                            </h4>
+                            <p class="pl-7 text-[15px]">瑞安市新纪元实验学校（汀田）初中部 <span class="text-brand-primary font-medium">2A-506 教室</span></p>
+                        </div>
+                    </div>
+                    <div class="space-y-6 sm:space-y-8">
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                <i class="fas fa-user-graduate text-[#d97706] text-lg"></i> 参加对象
+                            </h4>
+                            <p class="pl-7 text-[15px] leading-relaxed">
+                                新纪元初中<strong class="text-[#1e3a8a]">八、九年级学生</strong>（自愿参加），及签约新纪元高中<strong class="text-[#1e3a8a]">国际部</strong>的学生。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                <i class="fas fa-chalkboard-teacher text-[#d97706] text-lg"></i> 班主任
+                            </h4>
+                            <p class="pl-7 text-[15px]">
+                                苏乐 老师 (微信同号: <strong class="text-[#1e3a8a] font-mono">18705376509</strong>)
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-900 mb-2 flex items-center gap-2">
+                                <i class="far fa-calendar-alt text-[#d97706] text-lg pl-0.5"></i> 开课日期
+                            </h4>
+                            <p class="pl-7 text-[15px] font-bold text-[#1e3a8a]">
+                                2026年3月19日 正式启动
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 课程说明 (Program Description) -->
+        <section class="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-100">
+            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-100 pb-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划说明</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">Program Description</p>
+                </div>
+            </div>
+
+            <div class="space-y-6 sm:space-y-8 text-left sm:text-justify">
+                <!-- Para 1 -->
+                <div class="group">
+                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                        This program is specifically designed as a critical academic English bridge course for students transitioning into the A-Level curriculum. The course adopts a dual-track approach, integrating "Comprehensive Application" with "Oral Application" to holistically enhance students' English proficiency for the challenges of an international curriculum.
+                    </p>
+                    <p class="text-gray-800 text-base leading-loose">
+                        本课程专为即将进入国际高中 A-Level 课程体系的学生设计，是一门关键的学术英语衔接课程。课程以<strong class="text-brand-primary">双线并进</strong>的方式展开，将“综合应用”与“口语应用”相结合，旨在全面提升学生的英语能力以适应国际课程的挑战。
+                    </p>
+                </div>
+                
+                <!-- Para 2 -->
+                <div class="group border-t border-dashed border-gray-200 pt-6">
+                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                        The "Comprehensive Application" track focuses on core academic skills such as academic reading and writing, grammatical structures, listening and note-taking, and foundational research methods, building a solid linguistic base for A-Level subject studies. In parallel, the "Oral Application" track develops students' spoken communication skills, covering key interactive competencies like group discussions, debates, individual presentations, and providing constructive feedback.
+                    </p>
+                    <p class="text-gray-800 text-base leading-loose">
+                        <strong class="text-brand-secondary">“综合应用”</strong>部分聚焦于学术读写、语法结构、听力笔记和研究方法等核心学术英语技能，为 A-Level 的学科学习构建坚实的语言底座。与此同时，<strong class="text-brand-accent">“口语应用”</strong>部分同步培养学生的口语沟通能力，涵盖小组讨论、辩论、个人陈述及建设性反馈等关键互动技巧。
+                    </p>
+                </div>
+
+                <!-- Para 3 -->
+                <div class="group border-t border-dashed border-gray-200 pt-6">
+                    <p class="text-gray-500 italic font-serif text-[15px] mb-3 leading-relaxed group-hover:text-brand-primary transition-colors">
+                        This 14-week course aims to help students achieve a seamless transition to their international high school studies, laying a robust linguistic and academic foundation for success in the A-Level program. Upon completion, students will be equipped to confidently express their ideas in academic discussions, efficiently manage reading and writing assignments, and master the essential learning strategies required for an international academic environment.
+                    </p>
+                    <p class="text-gray-800 text-base leading-loose">
+                        本课程为期 <strong class="text-brand-dark">14 周</strong>，最终目标是帮助学生<strong class="text-brand-primary border-b-2 border-brand-accent/50 pb-0.5">无缝衔接国际高中学习</strong>，为他们在 A-Level 课程中取得成功打下坚实的语言与学术基础。课程结束后，学生将能够在学术讨论中自信地表达观点，高效地完成读写任务，并掌握进入国际课程所必需的学习策略。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: 教师团队 (Faculty) -->
+        <section class="bg-gradient-to-br from-brand-primary to-brand-dark rounded-2xl shadow-xl p-6 sm:p-10 text-white">
+            <div class="text-center mb-8 sm:mb-10">
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white mb-2">导师团队</h2>
+                <div class="w-12 sm:w-16 h-1 bg-brand-accent mx-auto rounded-full mb-3 sm:mb-4"></div>
+                <p class="text-xs sm:text-sm text-blue-200 uppercase tracking-widest font-display">Faculty Members</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Teacher 1 -->
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col sm:flex-row gap-5 sm:gap-6 items-center sm:items-start hover:bg-white/15 transition-all">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-2xl overflow-hidden bg-white/20 border-2 border-brand-accent/50">
+                        <!-- 预留照片位置 -->
+                        <img src="https://placehold.co/400x400/1e3a8a/ffffff?text=Froggen" alt="苏乐老师" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl sm:text-2xl font-bold font-serif text-white flex items-baseline gap-2 sm:gap-3 justify-center sm:justify-start">
+                            苏乐 <span class="text-sm sm:text-base font-display text-brand-accent font-normal">Froggen</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-blue-200 mt-1 mb-3 sm:mb-4 text-center sm:text-left">中方教学主任 / Lead Chinese Teacher</p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-blue-50/90 leading-relaxed">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>深耕国际教育10年，现任上海新纪元双语学校瑞安分部教学主任</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>英国朴次茅斯大学电子工程/教育学硕士</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>持有英语教师资格证、TESOL、TEFL 等专业认证</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Teacher 2 -->
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-5 sm:p-6 border border-white/10 flex flex-col sm:flex-row gap-5 sm:gap-6 items-center sm:items-start hover:bg-white/15 transition-all">
+                    <div class="w-24 h-24 sm:w-32 sm:h-32 shrink-0 rounded-2xl overflow-hidden bg-white/20 border-2 border-brand-accent/50">
+                        <!-- 预留照片位置 -->
+                        <img src="https://placehold.co/400x400/1e3a8a/ffffff?text=Kenneth" alt="Kenneth老师" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full">
+                        <h3 class="text-xl sm:text-2xl font-bold font-serif text-white flex items-baseline gap-2 sm:gap-3 justify-center sm:justify-start">
+                            Kenneth <span class="text-sm sm:text-base font-display text-brand-accent font-normal">Fortunah</span>
+                        </h3>
+                        <p class="text-xs sm:text-sm text-blue-200 mt-1 mb-3 sm:mb-4 text-center sm:text-left">外籍教育专家 / Lead Foreign Teacher</p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-blue-50/90 leading-relaxed">
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>资深外教，具备丰富的中美两地国际学校教学与学术管理经验</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>曾任职于北京国际双语学校、上海宋庆龄学校等知名学府</span></li>
+                            <li class="flex items-start gap-2"><i class="fas fa-check-circle text-brand-accent mt-0.5 shrink-0"></i> <span>历任年级组长、课程主管、外籍督导等核心教研职务</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 14周课程大纲 (Weekly Breakdown) -->
+        <section class="bg-white rounded-2xl shadow-xl p-5 sm:p-8 border border-gray-100">
+            <div class="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8 border-b border-gray-100 pb-4">
+                <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 text-brand-primary flex items-center justify-center text-lg sm:text-xl shrink-0">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl sm:text-2xl font-serif font-bold text-brand-dark">课程计划详见附件</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">14-Week Syllabus Overview</p>
+                </div>
+            </div>
+
+            <!-- Grid for 14 Weeks -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+                <!-- 紧凑型卡片结构 -->
+                <!-- Week 1 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 1</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">入班诊断与国际课堂适应 (Diagnostic Assessment & Adapting to the International Classroom).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">口语沟通能力诊断、观点的组织与清晰度.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 2</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">句子结构与时态框架 (A-Level阅读底座).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">50个话题选择、积极倾听与释义转述 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 3</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">名词短语扩展：让句子变“学术” (Noun Phrase Expansion).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">提问技巧与轮流发言 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 4</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">复合句1 - 从句与连接词 (Complex Sentences 1: Clauses & Conjunctions).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">使用 P.E.E. 模型进行辩论练习的话题选择.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 5 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 5</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">复合句2 - 定语从句与信息整合.</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">关于倾听与发言均衡度的同伴观察.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 6 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 6</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">动词系统：情态动词与学术表达 (Hedging).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">发言的简洁性与相关性 (独立回答).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 7 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 7</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">段落写作1：清晰、连贯、可读 (Paragraph Writing 1).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">说服性与解释性发言 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 8 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 8</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">期中复盘与小测 + 学习方法 (笔记与错题).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">视觉与修辞辅助 (独立回答).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 9 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 9</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">听力与课堂听讲：抓关键、会提问 (Listening & Note-taking).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">接收反馈与反思 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 10 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 10</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">讨论与展示：A-Level课堂互动能力.</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">叙事与讲故事基础 (独立).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 11 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 11</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">写作2：短文结构 (引言—主体—结尾).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">在时间压力下回答问题 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 12 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 12</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">阅读技能升级：推断、态度与主旨 (为大量阅读做准备).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">带有论据的独立论证 (独立).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 13 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 13</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">研究与引用意识 (Academic Honesty 入门).</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">小组协作与讨论中的领导力 (小组).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 14 -->
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-5 hover:shadow-md transition-shadow">
+                    <h3 class="font-display font-bold text-brand-primary border-b border-slate-200 pb-2 mb-3">Week 14</h3>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <span class="inline-block bg-blue-100 text-brand-primary text-xs px-2 py-0.5 rounded font-semibold mb-1">综合应用</span>
+                            <p class="text-gray-700">期末项目工作坊：演讲结构与 PPT 英语.</p>
+                        </div>
+                        <div>
+                            <span class="inline-block bg-orange-100 text-brand-accent text-xs px-2 py-0.5 rounded font-semibold mb-1">口语应用</span>
+                            <p class="text-gray-700">综合运用与展示准备 (小组与个人).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="bg-brand-primary rounded-2xl shadow-xl overflow-hidden relative">
+            <div class="absolute right-0 top-0 opacity-10 text-[120px] sm:text-[150px] transform translate-x-8 -translate-y-8">
+                <i class="fab fa-weixin"></i>
+            </div>
+            <div class="p-6 sm:p-12 flex flex-col sm:flex-row items-center justify-between relative z-10 gap-8 sm:gap-0">
+                <div class="text-white text-center sm:text-left w-full sm:w-auto">
+                    <h2 class="text-xl sm:text-2xl font-serif font-bold mb-2">有意向参与？请联系课程班主任</h2>
+                    <p class="text-sm sm:text-base text-blue-200 mb-6">获取完整大纲及入学评估资料</p>
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center w-full">
+                        <div class="bg-white/20 px-5 sm:px-6 py-3 rounded-xl border border-white/30 backdrop-blur-sm flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto">
+                            <i class="fas fa-user-circle text-2xl text-brand-accent"></i>
+                            <div class="text-left">
+                                <p class="text-[10px] sm:text-xs text-blue-200 uppercase tracking-wider">班主任</p>
+                                <p class="font-bold text-base sm:text-lg">苏乐 (Froggen) 老师</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/20 px-5 sm:px-6 py-3 rounded-xl border border-white/30 backdrop-blur-sm flex items-center justify-center sm:justify-start gap-3 w-full sm:w-auto">
+                            <i class="fas fa-phone-alt text-2xl text-brand-accent"></i>
+                            <div class="text-left">
+                                <p class="text-[10px] sm:text-xs text-blue-200 uppercase tracking-wider">联系电话/微信</p>
+                                <p class="font-bold text-base sm:text-lg font-mono">18705376509</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 替换后的专属二维码 -->
+                <div class="bg-white p-3 rounded-xl shadow-lg shrink-0 w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center mx-auto sm:mx-0 relative group">
+                    <img src="https://p.ipic.vip/kap9v1.jpg" alt="微信二维码" class="w-full h-full object-contain mb-1 rounded">
+                    <div class="absolute -bottom-6 bg-gray-800 text-white text-[10px] px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">扫码添加微信</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-10 text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="w-16 h-1 bg-brand-accent mx-auto mb-6 rounded-full"></div>
+            <h4 class="text-lg font-serif font-bold text-gray-800 tracking-wider">上海新纪元双语学校国际部瑞安分部</h4>
+            <p class="text-sm text-gray-400 mt-2 uppercase tracking-widest font-display">Shanghai New Epoch Bilingual School</p>
+            <p class="text-gray-400 text-xs mt-6 font-medium tracking-wider">发布日期：2026年3月18日</p>
+        </div>
+    </footer>
+
+</body>
+</html>
